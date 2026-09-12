@@ -22,13 +22,13 @@ El primer comando abre el navegador para que entres a tu cuenta de Vercel. Si no
 tienes, se crea ahi mismo con tu correo o con GitHub.
 
 ```bash
-cd C:/Users/soliz/Desktop/nexo-crm && npx vercel login
+npx vercel login
 ```
 
 Cuando termine, publica:
 
 ```bash
-cd C:/Users/soliz/Desktop/nexo-crm && npx vercel --prod --yes
+npx vercel --prod --yes
 ```
 
 Al final imprime la direccion, algo como `https://nexo-crm.vercel.app`. **Esa es
@@ -61,7 +61,7 @@ porque el proyecto ya los trae.
 Despues conecta y sube:
 
 ```bash
-cd C:/Users/soliz/Desktop/nexo-crm && git remote add origin https://github.com/TU-USUARIO/nexo-crm.git && git push -u origin main
+git remote add origin https://github.com/TU-USUARIO/nexo-crm.git && git push -u origin main
 ```
 
 Cambia `TU-USUARIO` por tu usuario de GitHub. La primera vez abre una ventana
@@ -92,7 +92,7 @@ Desde ahi cada `git push` publica la version nueva sola. Ya no hay que correr
 Para subir un cambio a partir de entonces:
 
 ```bash
-cd C:/Users/soliz/Desktop/nexo-crm && git add -A && git commit -m "describe el cambio" && git push
+git add -A && git commit -m "describe el cambio" && git push
 ```
 
 ---
