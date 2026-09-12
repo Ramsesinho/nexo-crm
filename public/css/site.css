@@ -1,0 +1,289 @@
+/* ==========================================================================
+   NEXO CRM - Pagina de venta
+   --------------------------------------------------------------------------
+   DESIGN_VARIANCE 6 / MOTION_INTENSITY 5 / VISUAL_DENSITY 4
+   Un solo acento, una sola escala de radios, un solo tema por preferencia
+   del sistema. Las vistas de producto que aparecen aqui son el producto real
+   corriendo dentro de un marco, no maquetas dibujadas a mano.
+   ========================================================================== */
+
+.wrap { width: min(1240px, 100% - 2.5rem); margin-inline: auto; }
+
+/* ------------------------------------------------------------ Tipografia -- */
+/* Tope de 3.1rem a proposito: por encima de eso el titular pasa de dos lineas
+   en la columna del hero, que es ancho fijo. */
+.display {
+  font-size: clamp(2.1rem, 4.2vw, 3.1rem);
+  line-height: 1.06;
+  letter-spacing: -0.038em;
+  font-weight: 620;
+  text-wrap: balance;
+}
+.h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 620;
+  text-wrap: balance;
+}
+.h3 { font-size: var(--text-md); font-weight: 620; letter-spacing: -0.015em; }
+.lede { font-size: var(--text-md); color: var(--ink-muted); max-width: 54ch; line-height: 1.6; }
+.muted { color: var(--ink-muted); }
+
+/* ------------------------------------------------------------ Navegacion -- */
+.nav-site {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  height: 68px;
+  display: flex; align-items: center;
+  border-bottom: 1px solid transparent;
+  background: color-mix(in srgb, var(--canvas) 85%, transparent);
+  backdrop-filter: blur(14px);
+  transition: border-color var(--dur) var(--ease);
+}
+.nav-site[data-stuck='true'] { border-bottom-color: var(--line); }
+.nav-site__inner { display: flex; align-items: center; gap: var(--sp-5); width: 100%; }
+.nav-site__links { display: flex; align-items: center; gap: var(--sp-5); margin-left: auto; }
+.nav-site__links a { font-size: var(--text-sm); color: var(--ink-muted); white-space: nowrap; }
+.nav-site__links a:hover { color: var(--ink); }
+.nav-cta-short { display: none; }
+@media (max-width: 720px) {
+  .nav-site__links a:not(.btn) { display: none; }
+  .nav-site__links { margin-left: auto; }
+  .nav-cta-long { display: none; }
+  .nav-cta-short { display: inline; }
+}
+
+/* ----------------------------------------------------------------- Hero -- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 46fr) minmax(0, 54fr);
+  gap: var(--sp-7);
+  align-items: center;
+  padding-block: clamp(3rem, 7vw, 5.5rem) clamp(3rem, 6vw, 5rem);
+}
+@media (max-width: 960px) { .hero { grid-template-columns: 1fr; gap: var(--sp-6); } }
+
+.hero__copy { display: flex; flex-direction: column; gap: var(--sp-5); }
+.hero__actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); }
+.hero__actions .btn { height: 44px; padding-inline: var(--sp-5); font-size: var(--text-base); }
+
+/* ------------------------------------------- Marco de producto en vivo --- */
+.frame {
+  border: 1px solid var(--line);
+  border-radius: var(--r-surface);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.frame__bar {
+  display: flex; align-items: center; gap: var(--sp-3);
+  height: 38px; padding-inline: var(--sp-4);
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-sunken);
+}
+.frame__dots { display: flex; gap: 6px; }
+.frame__dots span { width: 9px; height: 9px; border-radius: var(--r-pill); background: var(--line-strong); }
+.frame__url {
+  flex: 1;
+  max-width: 260px;
+  padding: 2px var(--sp-3);
+  border-radius: var(--r-pill);
+  background: var(--canvas);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.frame__live {
+  margin-left: auto;
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; color: var(--accent);
+}
+.frame__live span {
+  width: 6px; height: 6px; border-radius: var(--r-pill); background: var(--accent);
+}
+
+/* El iframe se renderiza a 1380px y se reduce por transform, para que la
+   aplicacion se vea a su escala real de escritorio dentro de un hueco chico. */
+.viewport { position: relative; overflow: hidden; background: var(--canvas); }
+.viewport iframe {
+  position: absolute; top: 0; left: 0;
+  width: 1380px;
+  border: 0;
+  transform-origin: top left;
+}
+.viewport--hero { aspect-ratio: 1380 / 880; }
+.viewport--hero iframe { height: 880px; }
+.viewport--wide { aspect-ratio: 1380 / 760; }
+.viewport--wide iframe { height: 760px; }
+/* Recorte alto: la celda vecina del bento es solo texto y una vista larga
+   dejaria media columna vacia al estirarse la fila. */
+.viewport--tile { aspect-ratio: 1380 / 560; }
+.viewport--tile iframe { height: 560px; }
+.viewport[data-locked='true'] iframe { pointer-events: none; }
+
+/* -------------------------------------------------- Banda de negocios --- */
+.band {
+  padding-block: var(--sp-6);
+  border-block: 1px solid var(--line);
+  background: var(--surface);
+}
+.band__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--sp-3); margin-bottom: var(--sp-4); }
+.band__title { font-size: var(--text-sm); font-weight: 620; }
+.band__note { font-size: var(--text-sm); color: var(--ink-faint); }
+
+.pills {
+  display: flex; gap: var(--sp-3);
+  overflow-x: auto;
+  padding-bottom: var(--sp-2);
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.pills::-webkit-scrollbar { display: none; }
+.pill {
+  flex: 0 0 auto;
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-4);
+  border: 1px solid var(--line);
+  border-radius: var(--r-pill);
+  background: var(--canvas);
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  white-space: nowrap;
+  scroll-snap-align: start;
+}
+.pill i { font-size: 16px; color: var(--accent); }
+
+/* ---------------------------------------------------------------- Bento -- */
+.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.section__head { display: flex; flex-direction: column; gap: var(--sp-3); max-width: 58ch; margin-bottom: var(--sp-6); }
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--sp-4);
+}
+.tile {
+  display: flex; flex-direction: column; gap: var(--sp-3);
+  padding: var(--sp-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-surface);
+  background: var(--surface);
+  overflow: hidden;
+}
+.tile--wide  { grid-column: span 4; }
+.tile--third { grid-column: span 2; }
+.tile--half  { grid-column: span 3; }
+.tile--accent {
+  background: linear-gradient(150deg, var(--accent-soft), var(--surface) 78%);
+  border-color: color-mix(in srgb, var(--accent) 26%, var(--line));
+}
+.tile--flush { padding: 0; }
+.tile--flush .tile__text { padding: var(--sp-5) var(--sp-5) 0; }
+.tile__icon {
+  display: grid; place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 9px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 19px;
+}
+.tile p { font-size: var(--text-sm); color: var(--ink-muted); line-height: 1.55; }
+.tile__shot { margin-top: auto; border-top: 1px solid var(--line); }
+
+@media (max-width: 900px) {
+  .bento { grid-template-columns: 1fr; }
+  .tile--wide, .tile--third, .tile--half { grid-column: span 1; }
+}
+
+/* -------------------------------------------------------------- Precios -- */
+.plans { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4); align-items: start; }
+@media (max-width: 800px) { .plans { grid-template-columns: 1fr; } }
+
+.plan {
+  display: flex; flex-direction: column; gap: var(--sp-4);
+  padding: var(--sp-6);
+  border: 1px solid var(--line);
+  border-radius: var(--r-surface);
+  background: var(--surface);
+}
+.plan--featured { border-color: var(--accent); box-shadow: var(--shadow-md); }
+.plan__name { font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.01em; }
+.plan__price { display: flex; align-items: baseline; gap: var(--sp-2); }
+.plan__amount { font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 620; letter-spacing: -0.035em; }
+.plan__per { font-size: var(--text-sm); color: var(--ink-faint); }
+.plan ul { display: flex; flex-direction: column; gap: var(--sp-3); font-size: var(--text-sm); }
+.plan li { display: flex; gap: var(--sp-3); align-items: flex-start; }
+.plan li i { color: var(--accent); font-size: 17px; margin-top: 1px; }
+
+.custom {
+  display: grid; grid-template-columns: 1fr auto; gap: var(--sp-5);
+  align-items: center;
+  margin-top: var(--sp-4);
+  padding: var(--sp-6);
+  border: 1px solid var(--line);
+  border-radius: var(--r-surface);
+  background: var(--surface-sunken);
+}
+@media (max-width: 800px) { .custom { grid-template-columns: 1fr; } }
+
+/* -------------------------------------------------------------- Preguntas */
+.faq { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-4) var(--sp-6); align-items: start; }
+@media (max-width: 860px) { .faq { grid-template-columns: 1fr; } }
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+  padding-block: var(--sp-4);
+}
+.faq summary {
+  display: flex; align-items: center; gap: var(--sp-3);
+  font-size: var(--text-base); font-weight: 560;
+  cursor: pointer; list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary i { margin-left: auto; color: var(--ink-faint); transition: transform var(--dur) var(--ease); }
+.faq details[open] summary i { transform: rotate(45deg); }
+.faq p { margin-top: var(--sp-3); font-size: var(--text-sm); color: var(--ink-muted); line-height: 1.6; max-width: 62ch; }
+
+/* ------------------------------------------------------------ Cierre y pie */
+.closer {
+  display: flex; flex-direction: column; align-items: center; gap: var(--sp-5);
+  padding: clamp(3rem, 7vw, 5rem) var(--sp-5);
+  border: 1px solid var(--line);
+  border-radius: var(--r-surface);
+  background: linear-gradient(160deg, var(--accent-soft), var(--surface) 70%);
+  text-align: center;
+}
+
+.foot {
+  border-top: 1px solid var(--line);
+  padding-block: var(--sp-6);
+  margin-top: var(--sp-7);
+}
+.foot__inner { display: flex; flex-wrap: wrap; gap: var(--sp-4); align-items: center; justify-content: space-between; }
+.foot p, .foot a { font-size: var(--text-sm); color: var(--ink-muted); }
+.foot a:hover { color: var(--ink); }
+.foot__links { display: flex; gap: var(--sp-5); flex-wrap: wrap; }
+
+/* --------------------------------------------------- Aparicion al entrar -- */
+/* El estado oculto se aplica SOLO si el script arranco. Si el modulo falla o
+   el navegador no lo ejecuta, el contenido se ve igual en vez de quedar en
+   opacidad cero para siempre. */
+@media (prefers-reduced-motion: no-preference) {
+  :root[data-js] [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);
+  }
+  :root[data-js] [data-reveal][data-shown='true'] { opacity: 1; transform: none; }
+
+  .hero__copy > * {
+    animation: rise var(--dur-slow) var(--ease) both;
+  }
+  .hero__copy > *:nth-child(2) { animation-delay: 70ms; }
+  .hero__copy > *:nth-child(3) { animation-delay: 140ms; }
+  .hero .frame { animation: rise 700ms var(--ease) 120ms both; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }

@@ -1,0 +1,25 @@
+name = "nexo-crm-api"
+main = "worker/index.js"
+compatibility_date = "2026-09-01"
+
+# Dominio de produccion permitido para CORS. Nunca dejar "*".
+# En produccion: wrangler secret NO hace falta aqui, es una var publica.
+[vars]
+ALLOWED_ORIGIN = "https://nexocrm.app"
+
+# Base de datos multi-tenant.
+# Crear con:  npx wrangler d1 create nexo-crm
+# Luego pegar el database_id que devuelve el comando.
+[[d1_databases]]
+binding = "DB"
+database_name = "nexo-crm"
+database_id = "PEGAR_AQUI_EL_ID_QUE_DEVUELVE_WRANGLER"
+
+# Rate limiting de login y signup.
+# Crear con:  npx wrangler kv namespace create RATE
+[[kv_namespaces]]
+binding = "RATE"
+id = "PEGAR_AQUI_EL_ID_DEL_KV"
+
+[observability]
+enabled = true

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es-PA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexo CRM</title>
+<meta name="description" content="CRM para equipos pequenos: contactos, embudo de ventas, tareas y metricas en un solo lugar.">
+<meta name="robots" content="noindex">
+
+
+<!-- SEGURIDAD. Esta politica prohibe scripts en linea y limita de donde puede
+     cargar el navegador. Va repetida aqui y en vercel.json a proposito: la
+     cabecera del servidor es la que manda, pero si el sitio se sube por FTP a
+     un hosting que no permite cabeceras, esta etiqueta lo sigue protegiendo.
+
+     AL CONECTAR LA API REAL: agrega el dominio del Worker a connect-src, aqui
+     y en vercel.json, o el navegador bloqueara las peticiones. Ejemplo:
+       connect-src 'self' https://nexo-crm-api.TU-CUENTA.workers.dev;
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self'; frame-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<div class="shell" id="shell" data-drawer="closed">
+
+  <aside class="sidebar" aria-label="Navegacion principal">
+    <div class="brand">
+      <span class="brand__mark" aria-hidden="true">N</span>
+      <span class="brand__name">Nexo CRM</span>
+    </div>
+
+    <nav class="nav" id="nav"></nav>
+
+    <div class="sidebar__foot">
+      <div class="orgcard">
+        <span class="avatar" id="userAvatar" aria-hidden="true">?</span>
+        <div style="min-width:0">
+          <p class="orgcard__name" id="orgName">Cargando</p>
+          <p class="orgcard__meta"><span id="userName"></span> · <span id="orgPlan"></span></p>
+        </div>
+      </div>
+      <a class="nav__item" href="index.html"><i class="ph ph-sign-out"></i><span>Salir</span></a>
+    </div>
+  </aside>
+
+  <div class="scrim" id="scrim"></div>
+
+  <div class="main">
+    <div class="demobar" id="demobar" hidden>
+      <i class="ph ph-flask" aria-hidden="true"></i>
+      <span>Modo demostracion. Los datos son ficticios y viven solo en este navegador.</span>
+      <button class="btn btn--sm" id="resetDemo">Reiniciar datos</button>
+    </div>
+
+    <header class="topbar">
+      <button class="btn btn--icon burger" id="burger" aria-label="Abrir navegacion">
+        <i class="ph ph-list"></i>
+      </button>
+      <h1 class="topbar__title" id="viewTitle">Panel</h1>
+
+      <div class="search">
+        <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+        <label class="visually-hidden" for="search">Buscar</label>
+        <input class="input" id="search" type="search" placeholder="Buscar contactos, correos, telefonos">
+      </div>
+
+      <div class="topbar__spacer"></div>
+      <button class="btn btn--icon" id="themeToggle" aria-label="Cambiar entre modo claro y oscuro">
+        <i class="ph ph-circle-half"></i>
+      </button>
+      <button class="btn btn--primary" id="newBtn">
+        <i class="ph ph-plus"></i><span>Crear</span>
+      </button>
+    </header>
+
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Detalle" inert></aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Crear registro"></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

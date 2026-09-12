@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es-PA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexo CRM</title>
+<meta name="description" content="CRM en espanol para equipos pequenos. Contactos, embudo de ventas, tareas y metricas en una sola pantalla. Pruebalo sin crear cuenta.">
+<meta property="og:title" content="Nexo CRM">
+<meta property="og:description" content="Contactos, embudo, tareas y numeros en un solo lugar. Pruebalo sin crear cuenta.">
+<meta property="og:type" content="website">
+
+
+<!-- SEGURIDAD. Esta politica prohibe scripts en linea y limita de donde puede
+     cargar el navegador. Va repetida aqui y en vercel.json a proposito: la
+     cabecera del servidor es la que manda, pero si el sitio se sube por FTP a
+     un hosting que no permite cabeceras, esta etiqueta lo sigue protegiendo.
+
+     AL CONECTAR LA API REAL: agrega el dominio del Worker a connect-src, aqui
+     y en vercel.json, o el navegador bloqueara las peticiones. Ejemplo:
+       connect-src 'self' https://nexo-crm-api.TU-CUENTA.workers.dev;
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data:; connect-src 'self'; frame-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<!-- ====================================================== Navegacion ==== -->
+<header class="nav-site" id="navSite">
+  <div class="wrap nav-site__inner">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">N</span>
+      <span class="brand__name">Nexo CRM</span>
+    </a>
+    <nav class="nav-site__links" aria-label="Secciones">
+      <a href="#producto">Producto</a>
+      <a href="#precios">Precios</a>
+      <a href="#preguntas">Preguntas</a>
+      <a class="btn btn--primary" href="app.html">
+        <span class="nav-cta-long">Abrir la demostracion</span>
+        <span class="nav-cta-short">Demostracion</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ========================================================== Hero ==== -->
+  <section class="wrap hero">
+    <div class="hero__copy">
+      <h1 class="display">Todo tu proceso de venta en una pantalla.</h1>
+      <p class="lede">
+        Contactos, embudo, tareas y numeros en un solo lugar.
+        Sin instalar nada, sin planillas que nadie actualiza.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="app.html">Abrir la demostracion</a>
+        <a class="btn btn--outline" href="#precios">Ver precios</a>
+      </div>
+    </div>
+
+    <!-- Esto no es una maqueta. Es la aplicacion real cargada en un marco. -->
+    <a class="frame" href="app.html" aria-label="Abrir la demostracion del panel">
+      <div class="frame__bar">
+        <span class="frame__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="frame__url">nexocrm.app/panel</span>
+        <span class="frame__live">En vivo<span aria-hidden="true"></span></span>
+      </div>
+      <div class="viewport viewport--hero" data-locked="true" data-scale>
+        <iframe src="app.html#/panel" title="Panel de metricas del CRM" tabindex="-1" scrolling="no"></iframe>
+      </div>
+    </a>
+  </section>
+
+  <!-- ================================================ Tipos de negocio == -->
+  <section class="band">
+    <div class="wrap">
+      <div class="band__head">
+        <h2 class="band__title">Pensado para negocios que venden por relacion, no por carrito</h2>
+        <p class="band__note">Un mismo sistema, el vocabulario de cada rubro</p>
+      </div>
+      <div class="pills">
+        <span class="pill"><i class="ph ph-megaphone"></i>Agencias y estudios</span>
+        <span class="pill"><i class="ph ph-first-aid-kit"></i>Clinicas y consultorios</span>
+        <span class="pill"><i class="ph ph-crane-tower"></i>Constructoras</span>
+        <span class="pill"><i class="ph ph-truck"></i>Distribuidoras</span>
+        <span class="pill"><i class="ph ph-house-line"></i>Inmobiliarias</span>
+        <span class="pill"><i class="ph ph-calculator"></i>Estudios contables</span>
+        <span class="pill"><i class="ph ph-wrench"></i>Talleres y servicios</span>
+        <span class="pill"><i class="ph ph-graduation-cap"></i>Academias</span>
+        <span class="pill"><i class="ph ph-airplane-tilt"></i>Turismo y tours</span>
+        <span class="pill"><i class="ph ph-shield-check"></i>Corredores de seguros</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================= Producto === -->
+  <section class="section wrap" id="producto">
+    <div class="section__head" data-reveal>
+      <h2 class="h2">Lo que un equipo de tres personas necesita, y nada mas.</h2>
+      <p class="lede">
+        La mayoria de los CRM grandes se abandonan porque piden llenar treinta campos
+        antes de servir para algo. Aqui se registra un contacto en quince segundos.
+      </p>
+    </div>
+
+    <div class="bento">
+      <article class="tile tile--wide tile--flush" data-reveal>
+        <div class="tile__text">
+          <span class="tile__icon" aria-hidden="true"><i class="ph ph-address-book"></i></span>
+          <h3 class="h3" style="margin-top:var(--sp-3)">Cada cliente con su historial completo</h3>
+          <p style="margin-block:var(--sp-2) var(--sp-5)">
+            Llamadas, notas, propuestas enviadas y cambios de etapa quedan en la ficha.
+            Cuando alguien del equipo retoma la cuenta, sabe exactamente por donde iba.
+          </p>
+        </div>
+        <div class="tile__shot viewport viewport--tile" data-locked="true" data-scale>
+          <iframe src="app.html#/contactos" title="Listado de contactos" loading="lazy" tabindex="-1" scrolling="no"></iframe>
+        </div>
+      </article>
+
+      <article class="tile tile--third tile--accent" data-reveal>
+        <span class="tile__icon" aria-hidden="true"><i class="ph ph-browser"></i></span>
+        <h3 class="h3">Se abre en el navegador</h3>
+        <p>
+          No hay programa que instalar ni servidor que mantener. Entras desde la
+          computadora de la oficina, desde la casa o desde el celular con la misma cuenta.
+        </p>
+      </article>
+
+      <article class="tile tile--third" data-reveal>
+        <span class="tile__icon" aria-hidden="true"><i class="ph ph-bell-ringing"></i></span>
+        <h3 class="h3">Ningun seguimiento se enfria</h3>
+        <p>
+          Cada tarea lleva fecha y responsable. Lo vencido se marca en rojo y sube al
+          tope de la lista, asi nadie tiene que acordarse de revisarlo.
+        </p>
+      </article>
+
+      <article class="tile tile--wide" data-reveal>
+        <span class="tile__icon" aria-hidden="true"><i class="ph ph-chart-line-up"></i></span>
+        <h3 class="h3">Los numeros salen solos</h3>
+        <p>
+          Cuanto hay en negociacion, cuanto se cerro este mes y que porcentaje de las
+          propuestas termina en venta. La proyeccion se ajusta sola segun la etapa de
+          cada oportunidad, sin que nadie arme una hoja de calculo el viernes.
+        </p>
+      </article>
+
+      <article class="tile tile--half" data-reveal>
+        <span class="tile__icon" aria-hidden="true"><i class="ph ph-device-mobile"></i></span>
+        <h3 class="h3">Sirve de verdad en el celular</h3>
+        <p>
+          La misma informacion, reordenada para una pantalla angosta. Util para anotar
+          algo saliendo de una reunion, que es cuando de verdad se pierde la informacion.
+        </p>
+      </article>
+
+      <article class="tile tile--half tile--accent" data-reveal>
+        <span class="tile__icon" aria-hidden="true"><i class="ph ph-lock-key"></i></span>
+        <h3 class="h3">Tus datos son tuyos y de nadie mas</h3>
+        <p>
+          Cada empresa vive en su propio espacio aislado. Las contrasenas se guardan
+          cifradas, las sesiones caducan y cada cambio queda registrado con autor y hora.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================================================ Embudo en vivo ==== -->
+  <section class="section wrap">
+    <div class="section__head" data-reveal>
+      <h2 class="h2">Arrastra una tarjeta aqui mismo.</h2>
+      <p class="lede">
+        Esto de abajo es el producto funcionando, no un video. Mueve una oportunidad de
+        etapa y mira como cambia el total de la columna.
+      </p>
+    </div>
+
+    <div class="frame" data-reveal>
+      <div class="frame__bar">
+        <span class="frame__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span class="frame__url">nexocrm.app/embudo</span>
+        <span class="frame__live">En vivo<span aria-hidden="true"></span></span>
+      </div>
+      <div class="viewport viewport--wide" data-scale>
+        <iframe src="app.html#/embudo" title="Embudo de ventas interactivo" loading="lazy" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== Precios === -->
+  <section class="section wrap" id="precios">
+    <div class="section__head" data-reveal>
+      <h2 class="h2">Precio cerrado, sin sorpresas.</h2>
+      <p class="lede">Se paga por empresa, no por usuario. Crecer de equipo no te cuesta mas.</p>
+    </div>
+
+    <!-- PRECIOS PROPUESTOS. Ajustalos a tu mercado antes de publicar. -->
+    <div class="plans">
+      <article class="plan" data-reveal>
+        <h3 class="plan__name">Esencial</h3>
+        <p class="plan__price">
+          <span class="plan__amount">$29</span>
+          <span class="plan__per">al mes, hasta 3 usuarios</span>
+        </p>
+        <ul>
+          <li><i class="ph ph-check"></i>Contactos y empresas sin limite</li>
+          <li><i class="ph ph-check"></i>Un embudo de ventas con etapas a tu medida</li>
+          <li><i class="ph ph-check"></i>Tareas con fecha y responsable</li>
+          <li><i class="ph ph-check"></i>Panel de metricas</li>
+          <li><i class="ph ph-check"></i>Respaldo diario de la informacion</li>
+        </ul>
+        <a class="btn btn--outline btn--block" href="app.html">Abrir la demostracion</a>
+      </article>
+
+      <article class="plan plan--featured" data-reveal>
+        <h3 class="plan__name">Equipo</h3>
+        <p class="plan__price">
+          <span class="plan__amount">$79</span>
+          <span class="plan__per">al mes, hasta 10 usuarios</span>
+        </p>
+        <ul>
+          <li><i class="ph ph-check"></i>Todo lo del plan Esencial</li>
+          <li><i class="ph ph-check"></i>Varios embudos en paralelo</li>
+          <li><i class="ph ph-check"></i>Campos propios de tu rubro</li>
+          <li><i class="ph ph-check"></i>Registro de auditoria por usuario</li>
+          <li><i class="ph ph-check"></i>Tu logo y tus colores en el sistema</li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="app.html">Abrir la demostracion</a>
+      </article>
+    </div>
+
+    <div class="custom" data-reveal>
+      <div>
+        <h3 class="h3">Implementacion a medida</h3>
+        <p class="muted" style="font-size:var(--text-sm);margin-top:var(--sp-2);max-width:62ch">
+          Migracion de tu Excel actual, etapas y campos armados con tu equipo, capacitacion
+          y dominio propio. Se cotiza una sola vez segun el tamano de la base.
+        </p>
+      </div>
+      <a class="btn btn--outline" href="#contacto">Pedir una cotizacion</a>
+    </div>
+  </section>
+
+  <!-- ====================================================== Preguntas === -->
+  <section class="section wrap" id="preguntas">
+    <div class="section__head" data-reveal>
+      <h2 class="h2">Preguntas que siempre salen.</h2>
+    </div>
+
+    <div class="faq">
+      <details data-reveal>
+        <summary>Tengo que instalar algo <i class="ph ph-plus" aria-hidden="true"></i></summary>
+        <p>No. Se abre en Chrome, Safari o Edge como cualquier pagina. Tampoco necesitas
+        un servidor propio ni alguien de sistemas.</p>
+      </details>
+
+      <details data-reveal>
+        <summary>Puedo traer los datos que ya tengo en Excel <i class="ph ph-plus" aria-hidden="true"></i></summary>
+        <p>Si. La migracion entra dentro de la implementacion a medida. Se revisa el archivo,
+        se limpian los duplicados y se carga con el historial que ya tengas.</p>
+      </details>
+
+      <details data-reveal>
+        <summary>Mis clientes pueden ver la informacion de otra empresa <i class="ph ph-plus" aria-hidden="true"></i></summary>
+        <p>No. Cada empresa tiene su propio espacio y toda consulta a la base filtra por
+        esa empresa en el servidor. El identificador nunca viaja desde el navegador.</p>
+      </details>
+
+      <details data-reveal>
+        <summary>Que pasa con mis datos si dejo de pagar <i class="ph ph-plus" aria-hidden="true"></i></summary>
+        <p>Se exporta todo en un archivo que puedes abrir en Excel y la cuenta queda
+        suspendida, no borrada. Nada se elimina sin que lo pidas por escrito.</p>
+      </details>
+
+      <details data-reveal>
+        <summary>Se puede poner mi marca <i class="ph ph-plus" aria-hidden="true"></i></summary>
+        <p>Si, en el plan Equipo. Logo, color principal y nombre del sistema. Tus clientes
+        ven tu marca, no la nuestra.</p>
+      </details>
+
+      <details data-reveal>
+        <summary>Cuanto toma tenerlo funcionando <i class="ph ph-plus" aria-hidden="true"></i></summary>
+        <p>La cuenta queda lista el mismo dia. Una implementacion con migracion y
+        capacitacion toma entre una y dos semanas segun el tamano de la base.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ======================================================== Cierre ==== -->
+  <section class="wrap" id="contacto" style="padding-bottom:var(--sp-7)">
+    <div class="closer" data-reveal>
+      <h2 class="h2" style="max-width:20ch">Entra a la demostracion y muevele.</h2>
+      <p class="lede" style="text-align:center">
+        Tiene datos de una empresa ficticia para que veas como se siente lleno.
+        No pide correo ni tarjeta.
+      </p>
+      <a class="btn btn--primary" href="app.html" style="height:44px;padding-inline:var(--sp-5)">
+        Abrir la demostracion
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__inner">
+    <p>Nexo CRM. Hecho en Panama.</p>
+    <nav class="foot__links" aria-label="Enlaces del pie">
+      <!-- Cambia este correo por el tuyo antes de publicar. -->
+      <a href="mailto:hola@nexocrm.app">Escribenos</a>
+      <a href="#precios">Precios</a>
+      <a href="app.html">Demostracion</a>
+    </nav>
+  </div>
+</footer>
+
+<script type="module" src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* ==========================================================================
+   NEXO CRM - Tokens de diseno
+   --------------------------------------------------------------------------
+   ESTE ES EL UNICO ARCHIVO QUE SE TOCA PARA REVENDER EL CRM CON OTRA MARCA.
+   Cambia el acento, el nombre del producto y el logo. Nada mas.
+
+   Reglas cerradas del sistema (no romperlas al personalizar):
+     - UN solo acento en toda la interfaz.
+     - Los colores semanticos (ganado / perdido / alerta) NO son el acento.
+     - UNA escala de radios: control 10px, superficie 16px, pildora completa.
+     - Ni negro puro ni blanco puro.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Marca (personalizable por cliente) ------------------------------ */
+  --accent:            #0E6E52;
+  --accent-hover:      #0B5942;
+  --accent-soft:       #E4F0EA;
+  --accent-contrast:   #FFFFFF;
+
+  /* ---- Neutros (una sola familia, ligeramente fria) -------------------- */
+  --canvas:            #FBFBFA;
+  --surface:           #FFFFFF;
+  --surface-sunken:    #F4F5F4;
+  --surface-hover:     #EFF1F0;
+  --line:              #E2E5E3;
+  --line-strong:       #CBD1CD;
+
+  --ink:               #14171A;
+  --ink-muted:         #5A6169;
+  --ink-faint:         #868D94;
+
+  /* ---- Semanticos (estado, nunca decoracion) --------------------------- */
+  --won:               #0E6E52;
+  --won-soft:          #E4F0EA;
+  --lost:              #B3372B;
+  --lost-soft:         #FAE9E7;
+  --warn:              #A96A11;
+  --warn-soft:         #FBF0DE;
+  --info:              #2C5F8A;
+  --info-soft:         #E7EFF6;
+
+  /* ---- Tipografia ------------------------------------------------------ */
+  --font-sans: 'Geist', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', 'SFMono-Regular', ui-monospace, Menlo, monospace;
+
+  --text-xs:   0.75rem;
+  --text-sm:   0.8125rem;
+  --text-base: 0.9375rem;
+  --text-md:   1.0625rem;
+  --text-lg:   1.375rem;
+  --text-xl:   1.875rem;
+  --text-2xl:  2.5rem;
+  --text-3xl:  3.5rem;
+
+  /* ---- Espaciado ------------------------------------------------------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4.5rem;
+  --sp-9: 7rem;
+
+  /* ---- Forma (escala unica) -------------------------------------------- */
+  --r-control: 10px;
+  --r-surface: 16px;
+  --r-pill:    999px;
+
+  /* ---- Elevacion (sombra tenida al fondo, nunca negro puro) ------------ */
+  --shadow-sm: 0 1px 2px rgba(20, 23, 26, 0.05);
+  --shadow-md: 0 4px 16px -4px rgba(20, 23, 26, 0.10), 0 1px 2px rgba(20, 23, 26, 0.04);
+  --shadow-lg: 0 24px 56px -20px rgba(20, 23, 26, 0.22), 0 2px 6px rgba(20, 23, 26, 0.05);
+
+  /* ---- Movimiento ------------------------------------------------------ */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur:      240ms;
+  --dur-slow: 520ms;
+
+  /* ---- Capas ----------------------------------------------------------- */
+  --z-sticky: 20;
+  --z-drawer: 40;
+  --z-modal:  60;
+  --z-toast:  80;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+
+    --accent:          #34A583;
+    --accent-hover:    #46BC98;
+    --accent-soft:     #16241F;
+    --accent-contrast: #08120E;
+
+    --canvas:          #101312;
+    --surface:         #171B1A;
+    --surface-sunken:  #1D2221;
+    --surface-hover:   #232928;
+    --line:            #2A3130;
+    --line-strong:     #3B4442;
+
+    --ink:             #EDF0EF;
+    --ink-muted:       #9BA4A1;
+    --ink-faint:       #6E7876;
+
+    --won:             #34A583;
+    --won-soft:        #16241F;
+    --lost:            #E0705F;
+    --lost-soft:       #2B1B18;
+    --warn:            #D9A03F;
+    --warn-soft:       #2A2113;
+    --info:            #6FA5D4;
+    --info-soft:       #16212B;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.30);
+    --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.30);
+    --shadow-lg: 0 24px 56px -20px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.35);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --accent:          #34A583;
+  --accent-hover:    #46BC98;
+  --accent-soft:     #16241F;
+  --accent-contrast: #08120E;
+
+  --canvas:          #101312;
+  --surface:         #171B1A;
+  --surface-sunken:  #1D2221;
+  --surface-hover:   #232928;
+  --line:            #2A3130;
+  --line-strong:     #3B4442;
+
+  --ink:             #EDF0EF;
+  --ink-muted:       #9BA4A1;
+  --ink-faint:       #6E7876;
+
+  --won:             #34A583;
+  --won-soft:        #16241F;
+  --lost:            #E0705F;
+  --lost-soft:       #2B1B18;
+  --warn:            #D9A03F;
+  --warn-soft:       #2A2113;
+  --info:            #6FA5D4;
+  --info-soft:       #16212B;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.45), 0 1px 2px rgba(0, 0, 0, 0.30);
+  --shadow-lg: 0 24px 56px -20px rgba(0, 0, 0, 0.65), 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------------------------------------------------------------- Reset -- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, p, figure, ul, ol { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+img, svg { display: block; max-width: 100%; }
+button, input, select, textarea { font: inherit; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: var(--r-control);
+}
+
+[hidden] { display: none !important; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.mono { font-family: var(--font-mono); font-feature-settings: 'tnum' 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
