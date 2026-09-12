@@ -29,3 +29,5 @@ desktop.ini
 # Registros
 *.log
 npm-debug.log*
+
+.vercel

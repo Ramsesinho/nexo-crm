@@ -1,5 +1,13 @@
 # Publicar en Vercel y guardar en GitHub
 
+> **ESTADO AL 2026-09-12.** Ya hay una publicacion temporal en linea:
+> `https://temporary-fast-draco-sajppci.vercel.app`
+>
+> Las publicaciones temporales **caducan a los 60 minutos** si no se reclaman.
+> Para quedartela, entra a la direccion de reclamo que imprimio la consola y
+> aceptala con tu cuenta. Despues conviene iniciar sesion en la CLI y republicar
+> con `--prod` para tener una direccion estable que no caduque.
+
 Para mostrar el CRM en una reunion **solo necesitas el paso 1**. La demostracion
 no lleva servidor ni base de datos, asi que con Vercel ya queda una direccion
 publica que abre en cualquier celular.
