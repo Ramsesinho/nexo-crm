@@ -63,10 +63,30 @@ nexo-crm/
 │       ├── store.js       Capa de datos con los dos motores
 │       ├── ui.js          Formato, plantillas seguras, avisos
 │       └── app.js         Enrutador y vistas
+├── vercel.json            Despliegue estatico y cabeceras de seguridad
+├── SECURITY.md            Que esta protegido y como. Sirve tambien en reuniones
 └── docs/
-    ├── DESPLIEGUE.md      Como ponerlo en linea, paso a paso
+    ├── PUBLICAR.md        Vercel y GitHub, empieza por aqui
+    ├── DESPLIEGUE.md      La API en Cloudflare, cuando haya clientes reales
     └── VENDER.md          Como revenderlo con otra marca
 ```
+
+---
+
+## Publicarlo
+
+Para mostrarlo en una reunion basta con Vercel. La demostracion no necesita
+servidor ni base de datos.
+
+```bash
+cd C:/Users/soliz/Desktop/nexo-crm && npx vercel login
+```
+
+```bash
+cd C:/Users/soliz/Desktop/nexo-crm && npx vercel --prod --yes
+```
+
+Pasos completos, GitHub incluido, en `docs/PUBLICAR.md`.
 
 ---
 
