@@ -56,23 +56,49 @@ suscripcion cubre el hosting y el soporte.
 
 ---
 
-## Sobre los precios que estan en la pagina
+## Sobre el precio
 
-Los numeros que aparecen hoy en `public/index.html` son una propuesta, no una
-decision. Estan marcados con un comentario en el codigo justo encima del bloque.
+**La pagina no lleva lista de precios, y es a proposito.** Una lista publica te
+encierra en el numero mas bajo que hayas escrito: el cliente llega anclado ahi y
+todo lo demas parece caro. Sin lista, el numero sale despues de que el cliente ya
+vio el producto funcionando y ya te conto su problema, que es el unico momento en
+que puede entender lo que vale.
 
-| Plan | Precio propuesto | Alcance |
-|---|---|---|
-| Esencial | 29 dolares al mes | Hasta 3 usuarios |
-| Equipo | 79 dolares al mes | Hasta 10 usuarios, marca propia |
-| Implementacion | Se cotiza | Migracion, configuracion, capacitacion |
+Lo que la pagina si dice es la **estructura** del cobro, que es lo que la gente
+necesita saber para decidir si sigue hablando: una implementacion que se paga una
+vez y un servicio mensual mientras lo use.
 
-Cobrar por empresa y no por usuario es una decision deliberada de venta. Quita la
-friccion de "si agrego a la secretaria me sube la factura", que es la razon mas
-comun por la que un equipo chico deja de usar el CRM que compro.
+### Como llegar al numero
 
-Antes de publicar, revisa estos numeros contra lo que cobra la competencia en tu
-mercado y ajustalos.
+**La implementacion se calcula por tu tiempo real.** Cuenta las horas de migrar la
+base, armar las etapas, adaptar los campos y capacitar. Multiplica por lo que vale
+tu hora y agrega margen. Nunca cobres la implementacion por debajo de ese numero:
+es la parte donde de verdad trabajas y es la que se regala mas facil.
+
+**El mensual tiene que cubrir tres cosas**, en este orden: la infraestructura, que
+en Cloudflare y Vercel cuesta centavos; tu tiempo de soporte, que es lo que de
+verdad se consume; y margen. Si el mensual solo cubre la infraestructura, estas
+pagando por trabajar.
+
+### Tres reglas para no regalar el trabajo
+
+**Pregunta el presupuesto antes de cotizar.** "Para orientarme, que rango tenian
+pensado invertir en esto" cambia toda la conversacion. Si el rango es muy bajo, lo
+sabes antes de armar una propuesta que te tome dos horas.
+
+**El primer numero que digas nunca debe ser el mas bajo que aceptarias.** Si
+arrancas en tu piso, solo puedes bajar. Deja espacio.
+
+**Ancla contra el costo de no tenerlo, no contra otro software.** Si el cliente
+pierde un negocio al mes porque nadie le dio seguimiento, el sistema se paga solo
+con recuperar uno. Ese es el numero con el que hay que comparar, no el precio de
+un competidor.
+
+### Cuando si conviene dar un numero en la pagina
+
+Cuando ya tengas cinco o seis clientes y sepas por experiencia que el rango es
+estable. Entonces una lista filtra a los que no pueden pagar y te ahorra
+reuniones. Antes de eso, la lista solo te limita.
 
 ---
 

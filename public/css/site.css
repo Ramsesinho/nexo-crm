@@ -209,11 +209,8 @@
   border-radius: var(--r-surface);
   background: var(--surface);
 }
-.plan--featured { border-color: var(--accent); box-shadow: var(--shadow-md); }
 .plan__name { font-size: var(--text-sm); font-weight: 700; letter-spacing: 0.01em; }
-.plan__price { display: flex; align-items: baseline; gap: var(--sp-2); }
-.plan__amount { font-family: var(--font-mono); font-size: var(--text-2xl); font-weight: 620; letter-spacing: -0.035em; }
-.plan__per { font-size: var(--text-sm); color: var(--ink-faint); }
+.plan__per { font-size: var(--text-sm); color: var(--ink-faint); margin-top: calc(var(--sp-3) * -1); }
 .plan ul { display: flex; flex-direction: column; gap: var(--sp-3); font-size: var(--text-sm); }
 .plan li { display: flex; gap: var(--sp-3); align-items: flex-start; }
 .plan li i { color: var(--accent); font-size: 17px; margin-top: 1px; }
