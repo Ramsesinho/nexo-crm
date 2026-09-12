@@ -1,12 +1,15 @@
 # Publicar en Vercel y guardar en GitHub
 
-> **ESTADO AL 2026-09-12.** Ya hay una publicacion temporal en linea:
-> `https://temporary-fast-draco-sajppci.vercel.app`
+> **ESTADO AL 2026-09-12.** Publicado y en linea:
+> **https://nexo-crm-beta.vercel.app**
 >
-> Las publicaciones temporales **caducan a los 60 minutos** si no se reclaman.
-> Para quedartela, entra a la direccion de reclamo que imprimio la consola y
-> aceptala con tu cuenta. Despues conviene iniciar sesion en la CLI y republicar
-> con `--prod` para tener una direccion estable que no caduque.
+> Esa es la direccion que se comparte. La direccion larga que imprime la consola
+> (`nexo-jh0b38q6l-nexos11.vercel.app`) responde 302 porque Vercel protege las
+> direcciones por despliegue, asi que no sirve para mandarsela a un cliente.
+>
+> Proyecto en Vercel: `nexos11/nexo-crm`. Para republicar despues de un cambio:
+> `npx vercel --prod --yes` desde la carpeta del proyecto.
+
 
 Para mostrar el CRM en una reunion **solo necesitas el paso 1**. La demostracion
 no lleva servidor ni base de datos, asi que con Vercel ya queda una direccion
