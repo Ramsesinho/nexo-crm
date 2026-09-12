@@ -1,14 +1,26 @@
 # Publicar en Vercel y guardar en GitHub
 
-> **ESTADO AL 2026-09-12.** Publicado y en linea:
-> **https://nexo-crm-beta.vercel.app**
+> **ESTADO AL 2026-09-12.** En linea: **https://nexocrm-demo.vercel.app**
 >
-> Esa es la direccion que se comparte. La direccion larga que imprime la consola
-> (`nexo-jh0b38q6l-nexos11.vercel.app`) responde 302 porque Vercel protege las
-> direcciones por despliegue, asi que no sirve para mandarsela a un cliente.
+> **Problema abierto en Vercel.** El primer despliegue de un proyecto compila bien.
+> Todos los siguientes quedan en estado `UNKNOWN` y nunca pasan a `Ready`, asi que
+> el alias publico se queda servindo la version anterior. Pasa igual si lo lanzas
+> tu desde PowerShell o desde otra maquina, y pasa en proyectos distintos, asi que
+> es de la cuenta y no del codigo.
 >
-> Proyecto en Vercel: `nexos11/nexo-crm`. Para republicar despues de un cambio:
-> `npx vercel --prod --yes` desde la carpeta del proyecto.
+> Por eso la direccion actual es `nexocrm-demo` y no `nexo-crm`: el proyecto
+> original quedo trabado y hubo que crear uno nuevo, cuyo primer despliegue si
+> compilo.
+>
+> **Como averiguar la causa:** abre el despliegue trabado en el panel de Vercel y
+> lee el aviso que sale arriba. La consola no da razon alguna, solo `UNKNOWN`. Lo
+> tipico es un limite de compilaciones del plan o una accion pendiente en la
+> cuenta, por ejemplo confirmar el correo o agregar metodo de pago al equipo.
+>
+> **Mientras no se resuelva**, cada cambio necesita un proyecto nuevo para salir en
+> linea, lo que va cambiando la direccion. No es sostenible: conviene resolverlo
+> antes de repartir el enlace a clientes.
+
 
 
 Para mostrar el CRM en una reunion **solo necesitas el paso 1**. La demostracion

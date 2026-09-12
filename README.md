@@ -7,7 +7,7 @@ metricas en una sola pantalla. Sin dependencias, sin paso de compilacion.
 > JavaScript on the front, Cloudflare Workers and D1 on the back. No build step,
 > no framework, no npm install.*
 
-**Demostracion en vivo:** https://nexo-crm-beta.vercel.app
+**Demostracion en vivo:** https://nexocrm-demo.vercel.app
 
 No pide correo ni tarjeta. Entra con datos de una empresa ficticia para que se
 vea como se siente el sistema lleno.
