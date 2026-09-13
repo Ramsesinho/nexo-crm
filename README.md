@@ -155,9 +155,9 @@ con cuenta propia.
 
 Copyright 2026 Ramses Adames. Todos los derechos reservados.
 
-Codigo privado. No se concede licencia para usarlo, copiarlo, modificarlo ni
-redistribuirlo, con fines comerciales o sin ellos. Si te interesa usarlo o
-quieres verlo, escribe.
+El codigo esta publicado para que se pueda revisar como portafolio. Eso no
+concede licencia: no se permite usarlo, copiarlo, modificarlo ni redistribuirlo,
+con fines comerciales o sin ellos. Si te interesa usarlo, escribe.
 
 **Contacto:** WhatsApp [6378-5191](https://wa.me/50763785191) ·
 [adamesramses999@gmail.com](mailto:adamesramses999@gmail.com)

@@ -75,20 +75,23 @@ porque el proyecto ya los trae.
 
 Despues conecta y sube:
 
-```bash
-git remote add origin https://github.com/TU-USUARIO/nexo-crm.git && git push -u origin main
+```powershell
+cd C:\Users\soliz\Desktop\nexo-crm
+git remote add origin https://github.com/Ramsesinho/nexo-crm.git
+git push -u origin main
 ```
 
-Cambia `TU-USUARIO` por tu usuario de GitHub. La primera vez abre una ventana
-para que autorices, no hay que escribir contrasena.
+La primera vez abre una ventana para que autorices, no hay que escribir
+contrasena.
 
 ### Publico o privado
 
-**Privado** si vas a cobrar por el sistema. Es codigo que vendes.
+**Publico desde el 2026-09-13**, como portafolio para reclutadores. El aviso de
+derechos del README deja claro que poder verlo no da permiso de usarlo.
 
-**Publico** si lo quieres como carta de presentacion tecnica. En ese caso revisa
-antes que no haya quedado nada personal: el correo del pie de pagina en
-`public/index.html` y la ruta con tu nombre de usuario en `.claude/launch.json`.
+Revisado antes de abrirlo: 0 secretos en los 8 commits del historial,
+`.claude/launch.json` sin rutas personales en ninguna version, y el correo y el
+WhatsApp que aparecen son los de contacto, a proposito.
 
 Ningun secreto esta en el repositorio. Las claves de la API van con
 `wrangler secret put`, nunca en un archivo, y el `.gitignore` bloquea `.env`,
